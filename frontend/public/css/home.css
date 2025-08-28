@@ -1,0 +1,12 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    min-height: max-content;
+    background-color: #1976d2;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
