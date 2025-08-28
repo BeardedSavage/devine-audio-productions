@@ -1,0 +1,25 @@
+.topPage {
+    background-color: #074EAE;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: underline;
+    font-size: x-large;
+}
+
+.home,
+.contact,
+.quote {
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: larger;
+    color: white;
+}
+
+.logo {
+    height: 15rem;
+    width: 20rem;
+    border-radius: 5%;
+    image-rendering: crisp-edges;
+}

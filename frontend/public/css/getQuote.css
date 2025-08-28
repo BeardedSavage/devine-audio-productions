@@ -1,0 +1,35 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    height: 100vh;
+}
+
+.input-area {
+    background-color: white;
+    border: thick solid black;
+    border-radius: 10px;
+    height: 5vh;
+    width: 50vw;
+}
+
+.text-area {
+    background-color: white;
+    border: thick solid black;
+    height: 30vh;
+    width: 80vh;
+    border-radius: 10px;
+}
+
+.btn {
+    background-color: #1976d2;
+    height: 3rem;
+    width: 6rem;
+    border-radius: 10px;
+    border: none;
+    font-weight: bolder;
+    font-size: larger;
+    cursor: pointer;
+}
