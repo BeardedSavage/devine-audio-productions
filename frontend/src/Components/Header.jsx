@@ -52,7 +52,7 @@ function Heading() {
               <ListItemIcon>
                 <HomeFilledIcon />
                 <Button color="inherit">
-                    <Link to="/" className="home">
+                    <Link to="/" className="home" reloadDocument>
                     Home
                     </Link>
                 </Button>
@@ -64,7 +64,7 @@ function Heading() {
             <ListItemButton>
               <ListItemIcon>
                 <Button color="inherit">
-                    <Link to="/contact" className="contact">
+                    <Link to="/contact" className="contact" reloadDocument>
                     Contact Us
                     </Link>
                 </Button>
@@ -76,7 +76,7 @@ function Heading() {
             <ListItemButton>
               <ListItemIcon>
                 <Button color="inherit">
-                    <Link to="/quote" className="quote">
+                    <Link to="/quote" className="quote" reloadDocument>
                     Get Quote
                     </Link>
                 </Button>
@@ -90,6 +90,7 @@ function Heading() {
             <ListItemIcon>
               <Button onClick={toggleDrawer(false)}>
                 <CancelRoundedIcon />
+                Exit Menu
               </Button> 
                   </ListItemIcon>
               </ListItemButton>
@@ -99,7 +100,7 @@ function Heading() {
     );
 
     return (
-        <BrowserRouter forceRefresh={true}>
+        <BrowserRouter>
             <div className="topPage">
                 <img src="/images/DivineAudio.jpg" alt="logo" className="logo" />
                 <h1>Devine Audio Productions</h1>
