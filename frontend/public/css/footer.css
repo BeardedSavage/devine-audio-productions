@@ -1,3 +1,9 @@
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+}
+
 footer{
     display: flex;
     flex-direction: column;
@@ -5,6 +11,8 @@ footer{
     justify-content: center;
     gap: 1rem;
     background-color: #1976d2;
+    flex: 1;
+    flex-shrink: 0;
 }
 
 footer>div {
