@@ -10,6 +10,15 @@ import { Typography } from '@mui/material';
 import { Button } from '@mui/material';
 import { IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import HomeFilledIcon from '@mui/icons-material/HomeFilled';
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 
 function Heading() {
 
@@ -27,7 +36,67 @@ function Heading() {
             default: console.log("No path given");
                 break;
         }
-    }, [])
+    }, []);
+
+    const [open, setOpen] = useState(false);
+
+    const toggleDrawer = (newOpen) => () => {
+        setOpen(newOpen);
+    };
+
+  const DrawerList = (
+    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+      <List>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <HomeFilledIcon />
+                <Button color="inherit">
+                    <Link to="/" className="home">
+                    Home
+                    </Link>
+                </Button>
+              </ListItemIcon>
+              <ListItemText />
+            </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <Button color="inherit">
+                    <Link to="/contact" className="contact">
+                    Contact Us
+                    </Link>
+                </Button>
+              </ListItemIcon>
+              <ListItemText />
+            </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <Button color="inherit">
+                    <Link to="/quote" className="quote">
+                    Get Quote
+                    </Link>
+                </Button>
+              </ListItemIcon>
+              <ListItemText />
+            </ListItemButton>
+              </ListItem>
+              <Divider />
+              <ListItem disablePadding>
+                <ListItemButton>  
+            <ListItemIcon>
+              <Button onClick={toggleDrawer(false)}>
+                <CancelRoundedIcon />
+              </Button> 
+                  </ListItemIcon>
+              </ListItemButton>
+              </ListItem>
+      </List>
+    </Box>
+    );
 
     return (
         <BrowserRouter forceRefresh={true}>
@@ -44,28 +113,16 @@ function Heading() {
                         color="inherit"
                         aria-label="menu"
                         sx={{ mr: 2 }}
+                        onClick={toggleDrawer(true)}
                     >
-                        <MenuIcon />
+                            <MenuIcon />
                     </IconButton>
+                    <Drawer open={open} onClose={toggleDrawer(false)}>
+                        {DrawerList}
+                    </Drawer>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         {currentPage}
                     </Typography>
-                        <Button color="inherit">
-                            <Link to="/" className="home">
-                            Home
-                            </Link>
-                        </Button>
-                        <Button color="inherit">
-                            <Link to="/contact" className="contact">
-                            Contact Us
-                            </Link>
-                        </Button>
-                        <Button color="inherit">
-                            <Link to="/quote" className="quote">
-                            Get Quote
-                            </Link>
-                        </Button>
-                        
                     </Toolbar>
                 </AppBar>
             </Box>

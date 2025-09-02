@@ -2,6 +2,7 @@ import React from "react";
 import {ImageList} from '@mui/material';
 import {ImageListItem} from '@mui/material';
 
+
 function Home() {
 
     const itemData = [
@@ -40,7 +41,7 @@ function Home() {
       <div className="homeContainer">
         <h1>About Us</h1>
             <div>
-                    <ImageList sx={{ width: 500, height: 450 }} variant="woven" cols={3} gap={8}>
+                     <ImageList sx={{ width: 500, height: 450 }} variant="woven" cols={3} gap={8}>
                     {itemData.map((item, index) => (
                         <ImageListItem key={index}>
                         <img
@@ -51,7 +52,7 @@ function Home() {
                         />
                         </ImageListItem>
                     ))}
-                    </ImageList>
+                    </ImageList> 
             </div>
         </div>
       <div className="empty-container"></div>
