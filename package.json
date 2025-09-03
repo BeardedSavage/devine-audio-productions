@@ -60,7 +60,7 @@
     "predeploy": "npm run test",
     "deploy": "gh-pages -d build",
     "server": "cd backend && nodemon app.js",
-    "client": "cd frontend && PORT=8080 && npm run dev",
+    "client": "cd frontend && set PORT=8080 && npm run dev",
     "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Jimmy Angelidakis",
