@@ -7,9 +7,11 @@
   "dependencies": {
     "array-union": "^2.1.0",
     "async": "^3.2.6",
+    "bootstrap": "^5.3.8",
     "braces": "^3.0.3",
     "commander": "^13.1.0",
     "commondir": "^1.0.1",
+    "concurrently": "^9.2.1",
     "dir-glob": "^3.0.1",
     "email-addresses": "^5.0.0",
     "escape-string-regexp": "^1.0.5",
@@ -50,13 +52,16 @@
     "trim-repeated": "^1.0.0",
     "universalify": "^2.0.1"
   },
-    "devDependencies": {
+  "devDependencies": {
     "gh-pages": "^6.3.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run test",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "server": "cd backend && nodemon app.js",
+    "client": "cd frontend && npm run dev",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Jimmy Angelidakis",
   "license": "ISC"

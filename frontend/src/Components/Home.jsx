@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import {ImageList} from '@mui/material';
-import {ImageListItem} from '@mui/material';
+import { ImageListItem } from '@mui/material';
 
 
 function Home() {
@@ -30,7 +30,7 @@ function Home() {
     img: '/images/527382104_122111567384954917_308510542993001760_n.jpg',
     title: 'Chairs',
   }
-    ];
+  ];
     
     console.log(itemData);
     
@@ -41,21 +41,21 @@ function Home() {
       <div className="homeContainer">
         <h1>About Us</h1>
             <div>
-                     <ImageList sx={{ width: 500, height: 450 }} variant="woven" cols={3} gap={8}>
-                    {itemData.map((item, index) => (
+                     <ImageList sx={{ width: 800, height: 500 }} variant="woven" cols={3} gap={8}>
+                      {itemData.map((item, index) => (
                         <ImageListItem key={index}>
-                        <img
-                            srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                            src={`${item.img}?w=161&fit=crop&auto=format`}
-                            alt={item.title}
-                            loading="lazy"
-                        />
+                            <img
+                                srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
+                                src={`${item.img}?w=161&fit=crop&auto=format`}
+                                alt={item.title}
+                                loading="lazy"
+                                className="img-fluid"
+                            />
                         </ImageListItem>
-                    ))}
-                    </ImageList> 
-            </div>
-        </div>
-      <div className="empty-container"></div>
+                      ))}
+                      </ImageList>
+       </div>   
+       </div>   
       </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, {useState, useSyncExternalStore} from "react";
+import React, {useState} from "react";
 import axios from "axios";
 import {CircularProgress} from '@mui/material';
 import {Box} from '@mui/material';
@@ -11,7 +11,6 @@ function GetQuote() {
     const [isLoading, setIsLoading] = useState(false);
 
     function sendMail() {
-        setIsLoading(true);
         if (sender && subject && message) {
             axios.post("http://localhost:3000/send-quote", {
                 sender,
@@ -21,13 +20,14 @@ function GetQuote() {
             .catch(() => alert("Ooops, something went wrong"));
             return;
         }
-        setIsLoading(false);
-
+        
         return alert("Fill out the form and continue.")
     }
 
     function handleSubmit() {
+        setIsLoading(true);
         sendMail();
+        setIsLoading(false);
     };
 
     return (
