@@ -5,7 +5,8 @@
   "type": "module",
   "homepage": "https://github.com/BeardedSavage/devine-audio-productions",
   "engines": {
-    "npm": "10.9.2"
+    "npm": "10.9.2",
+    "node": "16.13.0"
   },
   "scripts": {
     "dev": "vite",
