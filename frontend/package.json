@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://github.com/BeardedSavage/devine-audio-productions",
+  "engines": {
+    "npm": "10.9.2"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
