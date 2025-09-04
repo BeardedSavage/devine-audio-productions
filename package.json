@@ -61,7 +61,10 @@
     "deploy": "gh-pages -d build",
     "server": "cd backend && nodemon app.js",
     "client": "cd frontend && npm run dev",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-prebuild": "echo This runs before installing dependencies. && NPM_CONFIG_PRODUCTION=false",
+    "heroku-postbuild": "echo This runs after installing dependencies, but before pruning and caching dependencies. && NODE_BUILD_FLAGS",
+    "heroku-cleanup": "echo This runs after pruning and caching dependencies. && NPM_CONFIG_PRODUCTION=true"
   },
   "author": "Jimmy Angelidakis",
   "license": "ISC"
