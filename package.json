@@ -4,6 +4,9 @@
   "description": "A CI/CD repo for Devine Audio Productions\r Please take this code base a reference. The code made here is not going to work for your needs as it did mine.\r Remember all code bases are different and should be use the way you intend it's use for.\r This being said, I am not liably responsible for any broken code you may get on your end as this is built for someone elses needs.",
   "main": "index.js",
   "homepage": "https://github.com/BeardedSavage/devine-audio-productions",
+  "engines": {
+    "npm": "10.9.2"
+  },
   "dependencies": {
     "array-union": "^2.1.0",
     "async": "^3.2.6",
