@@ -8,7 +8,7 @@ import cors from 'cors';
 env.config();
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.NODE_PORT;
 // For later implementation of users and passwords
 const salt = 10;
 
