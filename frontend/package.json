@@ -6,7 +6,7 @@
   "homepage": "https://github.com/BeardedSavage/devine-audio-productions",
   "engines": {
     "npm": "10.9.2",
-    "node": "16.13.0"
+    "node": "22.13.0"
   },
   "scripts": {
     "dev": "vite",
