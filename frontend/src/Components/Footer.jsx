@@ -12,13 +12,13 @@ function Footer() {
                 </div>
                 <div>
                     <a href="">
-                        <img src="/public/facebook.png" alt="facebook" />
+                        <img src="/facebook.png" alt="facebook" />
                     </a>
                     <a href="">
-                        <img src="/public/instagram.png" alt="instagram" />
+                        <img src="/instagram.png" alt="instagram" />
                     </a>
                     <a href="">
-                        <img src="/public/youtube.png" alt="youtube" />
+                        <img src="/youtube.png" alt="youtube" />
                     </a>
                 </div>
             </footer>
