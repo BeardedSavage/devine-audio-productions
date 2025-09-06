@@ -11,7 +11,7 @@ import { fileURLToPath } from 'url';
 env.config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 // For later implementation of users and passwords
 const salt = 10;
 
@@ -34,6 +34,7 @@ function sendMail({sender, subject, message}) {
         const transport = nodemailer.createTransport({
             service: "gmail",
             secure: false,
+            port: 465,
             auth:{
                 user: process.env.GOOGLE_MAIL,
                 pass: process.env.GOOGLE_APP_PASS,
