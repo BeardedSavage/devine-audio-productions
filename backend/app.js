@@ -32,10 +32,12 @@ app.use(express.static(path.join(__dirname, "../frontend/dist")));
 function sendMail({sender, subject, message}) {
     return new Promise((resolve, reject) => {
         const transport = nodemailer.createTransport({
-            service: "gmail",
+            service: "smtp.hostinger.com",
+            port: 465,
+            secure: true,
             auth:{
-                user: process.env.GOOGLE_MAIL,
-                pass: process.env.GOOGLE_APP_PASS,
+                user: process.env.DAPRD_EMAIL,
+                pass: process.env.DAPRD_PASS,
             },
             html: `<p>${message}</p>`,
         });
