@@ -33,7 +33,7 @@ function sendMail({sender, subject, message}) {
     return new Promise((resolve, reject) => {
         const transport = nodemailer.createTransport({
             service: "smtp.hostinger.com",
-            port: 465,
+            port: 2525,
             secure: true,
             auth:{
                 user: process.env.DAPRD_EMAIL,
