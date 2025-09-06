@@ -44,7 +44,7 @@ function sendMail({sender, subject, message}) {
 
         const mailConfig = {
             address: sender,
-            to: process.env.GOOGLE_MAIL,
+            to: process.env.DAPRD_EMAIL,
             subject: subject,
             text: message,
         };
