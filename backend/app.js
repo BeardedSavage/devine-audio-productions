@@ -5,6 +5,8 @@ import bodyparser from 'body-parser';
 import nodemailer from 'nodemailer';
 import cors from 'cors';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
 
 env.config();
 
@@ -12,6 +14,8 @@ const app = express();
 const PORT = process.env.PORT;
 // For later implementation of users and passwords
 const salt = 10;
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 
 app.use(cors());
@@ -23,7 +27,7 @@ app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     next();
 });
-app.use(express.static(path.join(__dirname, "..", "frontend", "dist")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 function sendMail({sender, subject, message}) {
     return new Promise((resolve, reject) => {
@@ -56,14 +60,23 @@ function sendMail({sender, subject, message}) {
     });
 }
 
-app.get("*", (req, res) => {
-    res.send(path.join(__dirname, "..", "frontend", "dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
+// });
 
 app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
     sendMail()
         .then((response) => res.send(response.message))
         .catch((error) => res.status(500).send(error.message));
+});
+
+app.get("/contact", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
+});
+
+app.get("/quote", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
 });
 
 app.post("/send-quote", (req, res) => {
