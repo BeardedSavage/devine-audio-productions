@@ -34,7 +34,7 @@ function sendMail({sender, subject, message}) {
         const transport = nodemailer.createTransport({
             service: "gmail",
             secure: false,
-            port: 465 || 995,
+            port: 587,
             auth:{
                 user: process.env.GOOGLE_MAIL,
                 pass: process.env.GOOGLE_APP_PASS,
