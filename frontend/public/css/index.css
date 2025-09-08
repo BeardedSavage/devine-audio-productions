@@ -4,6 +4,7 @@
 }
 
 body {
-    background: no-repeat fixed #4b4d4f url("../images/BackGround.png");;
+    background: no-repeat fixed center #4b4d4f url("../images/BackGround.png");;
     height: 100%;
+    width: 100%;
 }
